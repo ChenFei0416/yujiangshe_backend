@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class OrderInfo {
     private String type;
-    private String date;
+    private Date date;
     private String title;
     private String name;
     private String phone;
@@ -20,7 +20,7 @@ public class OrderInfo {
                 '}';
     }
 
-    public OrderInfo(String type, String date, String title, String name, String phone) {
+    public OrderInfo(String type, Date date, String title, String name, String phone) {
         this.type = type;
         this.date = date;
         this.title = title;
@@ -39,11 +39,11 @@ public class OrderInfo {
         this.type = type;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

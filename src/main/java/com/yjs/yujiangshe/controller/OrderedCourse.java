@@ -1,20 +1,26 @@
 package com.yjs.yujiangshe.controller;
 
 import com.yjs.yujiangshe.po.OrderInfo;
+import com.yjs.yujiangshe.service.impl.SubmitOrderedCourseImpl;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
 
 @Controller
 @RequestMapping("/order")
 public class OrderedCourse {
 
-    @RequestMapping("/getOrderedCourse")
+    @Resource
+    SubmitOrderedCourseImpl submitOrderedCourseImpl;
+
+    @RequestMapping("/submitOrderedCourse")
     @ResponseBody
-    public String getOrderedCourse(@RequestBody OrderInfo orderInfo){
+    public OrderInfo submitOrderedCourse(OrderInfo orderInfo){
         System.out.println(orderInfo.toString());
-        return orderInfo.toString();
+        submitOrderedCourseImpl.submitOrderedCourse(orderInfo);
+        return orderInfo;
     }
 
     @RequestMapping("/test")
