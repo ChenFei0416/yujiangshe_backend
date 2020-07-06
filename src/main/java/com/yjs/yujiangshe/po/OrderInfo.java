@@ -1,9 +1,12 @@
 package com.yjs.yujiangshe.po;
 
-import java.sql.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 public class OrderInfo {
     private String type;
+    @DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     private Date date;
     private String title;
     private String name;

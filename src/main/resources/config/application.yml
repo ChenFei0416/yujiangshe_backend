@@ -3,12 +3,12 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/jdbc?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/yujiangshe?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
 
 mybatis:
   #该配置表示sql xml文件存放的地址
-  mapper-locations: classpath:*.xml
+  mapper-locations: classpath:/sqlMapper/*.xml
   type-aliases-package: com.yjs.yujiangshe.po

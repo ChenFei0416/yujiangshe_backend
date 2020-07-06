@@ -4,12 +4,14 @@ import com.yjs.yujiangshe.po.OrderInfo;
 import com.yjs.yujiangshe.service.impl.SubmitOrderedCourseImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.sql.Date;
 
 @Controller
-@RequestMapping("/order")
+@RequestMapping(value = "/order",method = RequestMethod.GET)
 public class OrderedCourse {
 
     @Resource
