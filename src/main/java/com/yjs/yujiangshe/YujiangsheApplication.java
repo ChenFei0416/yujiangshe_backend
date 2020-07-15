@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(value = "com.yjs.yujiangshe.mapper")
+@MapperScan(value = "com.yjs.yujiangshe.dao")
 public class YujiangsheApplication {
 
     public static void main(String[] args) {

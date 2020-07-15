@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yjs.yujiangshe.mapper.SubmitOrderedCourseMapper">
-    <insert id="submitOrderedCourseMapper" parameterType="com.yjs.yujiangshe.po.OrderInfo">
-        insert into ordered_course(type,date,title,name,phone) values(#{type},#{date},#{title},#{name},#{phone})
+<mapper namespace="com.yjs.yujiangshe.dao.SubmitOrderedCourseMapper">
+    <insert id="submitOrderedCourseMapper" parameterType="com.yjs.yujiangshe.entity.OrderInfo">
+        insert into YJS_ORDERED_COURSE(type,date,title,name,phone) values(#{type},#{date},#{title},#{name},#{phone})
     </insert>
 </mapper>

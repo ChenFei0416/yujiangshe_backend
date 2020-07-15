@@ -1,4 +1,4 @@
-package com.yjs.yujiangshe.po;
+package com.yjs.yujiangshe.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

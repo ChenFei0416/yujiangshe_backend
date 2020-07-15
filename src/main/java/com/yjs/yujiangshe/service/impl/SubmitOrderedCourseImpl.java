@@ -1,7 +1,7 @@
 package com.yjs.yujiangshe.service.impl;
 
-import com.yjs.yujiangshe.mapper.SubmitOrderedCourseMapper;
-import com.yjs.yujiangshe.po.OrderInfo;
+import com.yjs.yujiangshe.dao.SubmitOrderedCourseMapper;
+import com.yjs.yujiangshe.entity.OrderInfo;
 import com.yjs.yujiangshe.service.SubmitOrderedCourse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

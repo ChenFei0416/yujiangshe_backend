@@ -1,35 +1,32 @@
 package com.yjs.yujiangshe.controller;
 
-import com.yjs.yujiangshe.po.OrderInfo;
-import com.yjs.yujiangshe.service.impl.SubmitOrderedCourseImpl;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import com.yjs.yujiangshe.entity.OrderInfo;
+import com.yjs.yujiangshe.service.SubmitOrderedCourse;
+import com.yjs.yujiangshe.vo.Result;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import java.sql.Date;
-
-@Controller
+@RestController
 @RequestMapping(value = "/order",method = RequestMethod.GET)
+@CrossOrigin
 public class OrderedCourse {
 
-    @Resource
-    SubmitOrderedCourseImpl submitOrderedCourseImpl;
+    @Autowired
+    SubmitOrderedCourse submitOrderedCourse;
 
     @RequestMapping("/submitOrderedCourse")
-    @ResponseBody
-    public OrderInfo submitOrderedCourse(OrderInfo orderInfo){
-        System.out.println(orderInfo.toString());
-        submitOrderedCourseImpl.submitOrderedCourse(orderInfo);
-        return orderInfo;
-    }
-
-    @RequestMapping("/test")
-    @ResponseBody
-    public String getOrderedCourse(){
-        System.out.println("小程序请求");
-        return "小程序请求";
+    public Result submitOrderedCourse(OrderInfo orderInfo){
+        Result result = new Result();
+        try{
+            System.out.println(orderInfo.toString());
+            submitOrderedCourse.submitOrderedCourse(orderInfo);
+            result.setMsg("小程序预定课程信息提交成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setStatus(false);
+            result.setMsg("小程序预定课程信息提交失败");
+        }
+        return result;
     }
 
 }

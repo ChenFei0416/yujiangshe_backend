@@ -7,8 +7,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  resources:
+    #static文件夹下用于存放vue打包文件
+    static-locations: classpath:/static/
 
 mybatis:
   #该配置表示sql xml文件存放的地址
   mapper-locations: classpath:/sqlMapper/*.xml
-  type-aliases-package: com.yjs.yujiangshe.po
+  type-aliases-package: com.yjs.yujiangshe.entity
