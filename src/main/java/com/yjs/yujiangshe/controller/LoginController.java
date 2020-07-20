@@ -1,8 +1,9 @@
 package com.yjs.yujiangshe.controller;
 
+import com.yjs.yujiangshe.entity.Token;
+import com.yjs.yujiangshe.entity.TokenResult;
 import com.yjs.yujiangshe.entity.User;
-import com.yjs.yujiangshe.utils.ResultUtil;
-import com.yjs.yujiangshe.vo.Result;
+import com.yjs.yujiangshe.entity.UserInfo;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -17,9 +18,22 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
 
     @PostMapping(value = "/login")
-    public Result login(@RequestBody User user){
+    public TokenResult login(@RequestBody User user){
         System.out.println(user.toString());
-        return new ResultUtil().success(user);
+        TokenResult t = new TokenResult();
+        t.setCode("20000");
+        t.setData(new Token());
+        System.out.println(t.toString());
+        return t;
+    }
+
+    @GetMapping(value = "/info")
+    public TokenResult getInfo(){
+        TokenResult t = new TokenResult();
+        t.setCode("20000");
+        t.setData(new UserInfo());
+        System.out.println(t.toString());
+        return t;
     }
 
 }

@@ -44,7 +44,9 @@ public enum ResultEnum {
     //file
     FILEMISS("118", "文件不存在"),
     FILETOOBIG("119", "文件过大"),
-    FILEUPLOADFAIL("120", "文件上传失败");
+    FILEUPLOADFAIL("120", "文件上传失败"),
+
+    SUCCESS_VUE("20000","axios请求成功");
 
     @Getter
     @Setter

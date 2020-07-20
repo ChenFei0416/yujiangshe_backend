@@ -9,9 +9,15 @@ import com.yjs.yujiangshe.vo.ResultEnum;
  * @Date 2020/7/16 17:09
  */
 public class ResultUtil {
-    public static Result success(Object object) {
+    public static Result success(Object data) {
         Result result = new Result(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMessage());
-        result.setData(object);
+        result.setData(data);
+        return result;
+    }
+
+    public static Result successVue(Object data) {
+        Result result = new Result(ResultEnum.SUCCESS_VUE.getCode(), ResultEnum.SUCCESS_VUE.getMessage());
+        result.setData(data);
         return result;
     }
 }
