@@ -14,10 +14,4 @@ public class ResultUtil {
         result.setData(data);
         return result;
     }
-
-    public static Result successVue(Object data) {
-        Result result = new Result(ResultEnum.SUCCESS_VUE.getCode(), ResultEnum.SUCCESS_VUE.getMessage());
-        result.setData(data);
-        return result;
-    }
 }

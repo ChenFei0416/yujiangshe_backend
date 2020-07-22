@@ -1,5 +1,7 @@
 package com.yjs.yujiangshe.vo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -10,13 +12,14 @@ import java.io.Serializable;
  * @Date 2020/7/15 17:56
  */
 
+@ApiModel("统一返回信息实体")
 @Data
 public class Result<T> implements Serializable {
-    //状态码
+    @ApiModelProperty("状态码")
     private String code;
-    //消息描述
+    @ApiModelProperty("消息描述")
     private String msg;
-    //实体数据
+    @ApiModelProperty("返回的数据")
     private T data;
 
     private Result(ResultEnum resultEnum) {
