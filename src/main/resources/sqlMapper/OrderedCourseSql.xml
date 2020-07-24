@@ -8,4 +8,31 @@
     <select id="getOrderedCourseAll" resultType="com.yjs.yujiangshe.entity.OrderInfo">
         select * from YJS_ORDERED_COURSE
     </select>
+
+    <update id="updateOrderedCourse">
+        update YJS_ORDERED_COURSE
+        <set>
+            type = #{orderInfo.type},date = #{orderInfo.date},title = #{orderInfo.title},name = #{orderInfo.name},phone = #{orderInfo.phone}
+            <!--<if test="orderInfo.type!=null">-->
+                <!--type = #{orderInfo.type},-->
+            <!--</if>-->
+            <!--<if test="orderInfo.date!=null">-->
+                <!--date = #{orderInfo.date},-->
+            <!--</if>-->
+            <!--<if test="orderInfo.title!=null">-->
+                <!--title = #{orderInfo.title},-->
+            <!--</if>-->
+            <!--<if test="orderInfo.name!=null">-->
+                <!--name = #{orderInfo.name},-->
+            <!--</if>-->
+            <!--<if test="orderInfo.phone!=null">-->
+                <!--phone = #{orderInfo.phone},-->
+            <!--</if>-->
+        </set>
+        <where>
+            <if test='orderInfo.courseId!=null and orderInfo.courseId!=""'>
+                course_id = #{orderInfo.courseId}
+            </if>
+        </where>
+    </update>
 </mapper>

@@ -18,8 +18,8 @@ public class OrderInfo {
     private String type;
 
     @ApiModelProperty("预定时间")
-    @DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss",timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date date;
 
     @ApiModelProperty("预定课程标题")

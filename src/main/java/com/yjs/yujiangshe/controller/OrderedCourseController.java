@@ -1,5 +1,6 @@
 package com.yjs.yujiangshe.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.yjs.yujiangshe.entity.OrderInfo;
 import com.yjs.yujiangshe.exception.BusinessRuntimeException;
 import com.yjs.yujiangshe.service.OrderedCourseService;
@@ -10,10 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/order")
@@ -38,7 +36,16 @@ public class OrderedCourseController {
 
     @ApiOperation("获取所有已预定课程信息，返回给前端渲染表格")
     @GetMapping("/getOrderedCourseAll")
-    public Result OrderedCourse(){
-        return ResultUtil.success(submitOrderedCourse.getOrderedCourseAll());
+    public Result OrderedCourse(@RequestParam(value="pageNum", defaultValue="1")Integer pageNum,
+                                @RequestParam(defaultValue = "15") Integer pageSize){
+        PageInfo<OrderInfo> pageInfo = submitOrderedCourse.getOrderedCourseAll(pageNum, pageSize);
+        return ResultUtil.success(pageInfo);
+    }
+
+    @ApiOperation("编辑已预定课程信息")
+    @PostMapping("/updateOrderedCourse")
+    public Result OrderedCourse(OrderInfo orderInfo){
+        System.out.println(orderInfo);
+        return submitOrderedCourse.updateOrderedCourse(orderInfo);
     }
 }

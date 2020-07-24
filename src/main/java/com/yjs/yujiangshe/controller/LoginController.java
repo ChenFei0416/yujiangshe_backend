@@ -59,7 +59,6 @@ public class LoginController {
     public Result getInfo(String token){
         try {
             UserInfo userInfo = loginService.getUserInfoByToken(token);
-            System.out.println(userInfo.toString());
             return ResultUtil.success(userInfo);
         }catch (Exception e){
             throw new BusinessRuntimeException(ResultEnum.TOKENFAIL);
