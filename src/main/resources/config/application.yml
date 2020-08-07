@@ -10,7 +10,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
   resources:
     #static文件夹下用于存放vue打包文件
-    static-locations: classpath:/static/
+    static-locations: classpath:/static/dist
 
 mybatis:
   #该配置表示sql xml文件存放的地址
