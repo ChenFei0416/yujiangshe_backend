@@ -7,6 +7,6 @@ package com.yjs.yujiangshe.controller;
  */
 public class TestController {
     public void test(){
-        System.out.println("。");
+        System.out.println("~~~~~~~~~~~~~~~~");
     }
 }
