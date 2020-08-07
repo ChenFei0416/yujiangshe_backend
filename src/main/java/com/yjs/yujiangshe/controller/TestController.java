@@ -11,6 +11,6 @@ public class TestController {
     }
     
     public void test1(){
-        System.out.println("......");
+        System.out.println("；；；");
     }
 }
