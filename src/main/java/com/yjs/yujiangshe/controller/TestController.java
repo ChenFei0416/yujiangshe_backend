@@ -9,4 +9,8 @@ public class TestController {
     public void test(){
         System.out.println("~~~~~~~~~~~~~~~~");
     }
+    
+    public void test1(){
+        System.out.println("......");
+    }
 }
